@@ -31,7 +31,7 @@ jobs:
         name: build-${{github.sha}}
     - name: Echo build files
       run: >-
-        ls build-${{github.sha}} &&
+        ls build-${{github.sha}}
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
@@ -56,7 +56,7 @@ jobs:
         node src-index/main.js
     - name: Show index
       run: >-
-        cat index.html &&
+        cat index.html
     - name: Configure AWS credentials
       uses: aws-actions/configure-aws-credentials@v1
       with:
