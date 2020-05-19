@@ -31,7 +31,7 @@ jobs:
         name: build-${{github.sha}}
     - name: Echo build files
       run: >-
-        ls build-${{github.sha}} && aws s3 cp index.html s3://martin-sin-host/index.html --cache-control no-store
+        aws s3 cp index.html s3://martin-sin-host/index.html --cache-control no-store
    - name: Configure AWS credentials
      uses: aws-actions/configure-aws-credentials@v1
      with:
@@ -53,7 +53,7 @@ jobs:
         node src-index/main.js
     - name: Show index
       run: >-
-        cat index.html && aws s3 cp build/ s3://martin-sine-assets/assets/1/ --recursive --cache-control public,max-age=31536000,immutable
+        aws s3 cp build/ s3://martin-sine-assets/assets/1/ --recursive --cache-control public,max-age=31536000,immutable
    - name: Configure AWS credentials
      uses: aws-actions/configure-aws-credentials@v1
      with:
